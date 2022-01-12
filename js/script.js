@@ -24,7 +24,15 @@ const quotes = [
     source: 'Steve Martin'
   },
 ];
-console.log(quotes[0][1]);
+console.log(quotes[0].quote);
+
+
+//must use brackets
+/*
+for (let prop in person){
+  console.log(`${prop} ${person[prop]}`);
+}
+*/
 
 /***
  * `getRandomQuote` function
