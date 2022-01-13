@@ -18,37 +18,43 @@ const quotes = [
     quote: 'I refuse to join any club that would have me as a member.',
     source: 'Groucho Marx',
     citation: '',
-    year: ''
+    year: '',
+    character: ``
   },
   {
     quote: 'Do not take life too seriously. You will never get out of it alive.',
     source: 'Elbert Hubbard',
     citation: '',
-    year: ''
+    year: '',
+    character: ``
   },
   {
     quote: 'A day without sunshine is like, you know, night.',
     source: 'Steve Martin',
     citation: '',
-    year: ''
+    year: '',
+    character: ``
   },
   {
-    quote: 'Talk is cheap. Show me the code.',
-    source: 'Linus Torvalds',
-    citation: 'Citation',
-    year: '2000'
+    quote: `Toto, I've a feeling we're not in Kansas anymore`,
+    source: 'Judy Garland',
+    citation: 'The Wizard of Oz',
+    year: '1939',
+    character: `Dorothy`
   },
   {
-    quote: 'I don’t care if it works on your machine! We are not shipping your machine!',
+    quote: `I don't care if it works on your machine! We are not shipping your machine!`,
     source: 'Vidiu Platon',
-    citation: 'Citation',
-    year: '2000'
+    citation: '',
+    year: '',
+    character: ``
   },
   {
     quote: 'Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.',
     source: 'Martin Golding',
-    citation: 'Citation',
-    year: '2000'
+    citation: '',
+    year: '',
+    character: ``
   }
 ];
 
@@ -69,6 +75,17 @@ function getRandomQuote(){
   
   return quotes[randomNumber];
 }
+/**
+ * Credit to: Chris Coyier on Dec 10, 2009 (Updated on Feb 19, 2020)
+ * https://css-tricks.com/snippets/javascript/random-hex-color/
+ * 
+ **/
+
+const setBgColor = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = '#' + randomColor;
+}
+
 
 /** 
  * `printQuote` function
@@ -87,14 +104,25 @@ function printQuote(){
   if(currentQuote.year !== ''){
     html += `<span class="year">${currentQuote.year}</span>`;
   }
+  if(currentQuote.character !== ''){
+    html += `<span class="year">${currentQuote.character}</span>`;
+  }
   html += `</p>`
     document.querySelector('main').innerHTML = html;
+  
+  
 }
-
+//calls printQuote() once to make sure the webpage has a quote when it opens.
 printQuote();
+
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+//event listener to change background color
+document.getElementById('load-quote').addEventListener("click", setBgColor, false);
