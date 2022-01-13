@@ -78,7 +78,7 @@ function getRandomQuote(){
 /**
  * Credit to: Chris Coyier on Dec 10, 2009 (Updated on Feb 19, 2020)
  * https://css-tricks.com/snippets/javascript/random-hex-color/
- * 
+ * This was extra, I hope it's ok since I'm not trying for exceeds expectations.
  **/
 
 const setBgColor = () => {
